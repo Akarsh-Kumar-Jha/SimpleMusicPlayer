@@ -303,6 +303,13 @@ button:hover::before {
         width: 30vw;
         height: 30vh;
     }
+    #left-bottom{
+        position: relative;
+        top:15px;
+    }
+    #left-bottom .material-symbols-outlined{
+      font-size: 15px;
+    }
     #nav-bar{
         width: 87%;
         display: flex;
@@ -322,11 +329,15 @@ button:hover::before {
     #search{
         position: absolute;
         top:40px;
-        left:100px;
+        left:0px;
         width: 20px;
     }
+    #search input{
+        width: 68px;
+        font-size: 7px;
+    }
     #sr{
-        width: 20px;
+        font-size: 15px;
     }
     #right{
         width: 70vw;
@@ -353,7 +364,7 @@ button:hover::before {
     }
     #left-top{
     position: relative;
-    left: 10px;
+    left: 8px;
     top: 15px;
     }
 }
