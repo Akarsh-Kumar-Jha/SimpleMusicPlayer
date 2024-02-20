@@ -370,9 +370,27 @@ button:hover::before {
     top: 15px;
     }
 }
-@media screen and (max-width: 406px){
+@media screen and (max-height:450px){
     #right{
         position: relative;
         width: 220px;
     }
+    #left{
+        position: relative;
+        top:20px;
+        width: 20vw;
+        height: 25vh;
+    }
+    #left-bottom{
+        position: relative;
+        top:10px;
+    }
+    #left-bottom .material-symbols-outlined{
+      font-size: 12px;
+    }
+    #left-top{
+        position: relative;
+        left: 8px;
+        top: 5px;
+        }
 }
