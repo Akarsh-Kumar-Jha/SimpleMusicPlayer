@@ -93,12 +93,11 @@ var back;
 back= document.querySelector("#back")
     for(let i=0;i<6;i++){
         naam[i].addEventListener("click",function(dets){
-            currSng=dets.target.dataset.index;
                 audio.src=arr[dets.target.dataset.index].url
                 main_img.src=`${arr[dets.target.dataset.index].SongCover}`
                 iflag=1;
                 vflag=1;
-               currSng=dets.target.dataset.number
+               currSng=parseInt(dets.target.dataset.index)
                back.style.opacity=1;
                back.style.cursor="pointer"
                next.style.opacity=1;
@@ -108,30 +107,35 @@ back= document.querySelector("#back")
     }
     console.log(next)
     var vflag=0;
-function backFord(){
-    back.addEventListener("click", function() {
-        if(vflag==0){
-            alert('Please Choose Any Song To Move BackWard')
-        }
-        else{
-            currSng = (currSng - 1 + 6) % 6;
-            audio.src = arr[currSng].url;
-            main_img.src = `${arr[currSng].SongCover}`;
-            applyAnim(currSng)
+    function backFord() {
+        back.addEventListener("click", function() {
+            if (vflag == 0) {
+                alert('Please Choose Any Song To Move Backward');
+            } else {
+                currSng = (currSng - 1 + 6) % 6;
+                updateSong(currSng);
+            }
+        });
+    
+        next.addEventListener("click", function() {
+            if (vflag == 0) {
+                alert('Please Choose Any Song To Move Forward');
+            } else {
+                currSng = (parseInt(currSng) + 1) % 6;
+                updateSong(currSng);
+            }
+        });
+    }
+    
+    function updateSong(index) {
+        if (arr && arr.length > 0 && arr[index]) {
+            audio.src = arr[index].url;
+            main_img.src = `${arr[index].SongCover}`;
+            applyAnim(index);
             audio.play();
+        } else {
+            console.error('Invalid array index or empty array.');
         }
-    });
-    next.addEventListener("click", function() {
-        if(vflag==0){
-            alert('Please Choose Any Song To Move ForWard')
-        }
-        else{
-            currSng = (parseInt(currSng) + 1) % 6;
-            audio.src = arr[currSng].url;
-            main_img.src = `${arr[currSng].SongCover}`;
-            applyAnim(currSng)
-            audio.play();
-        }
-    });
-}
-backFord()
+    }
+    
+    backFord();
