@@ -103,6 +103,7 @@ back= document.querySelector("#back")
                next.style.opacity=1;
                next.style.cursor="pointer"
                main()
+            applyAnim(i)
             })
     }
     console.log(next)
