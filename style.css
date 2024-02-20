@@ -300,8 +300,8 @@ button:hover::before {
         height: 70vh;
     }
     #left{
-        width: 80vw;
-        height: 80vh;
+        width: 30vw;
+        height: 40vh;
     }
     #nav-bar{
         width: 87%;
@@ -329,8 +329,8 @@ button:hover::before {
         width: 20px;
     }
     #right{
-        position: relative;
-        width: 240px;
+        width: 70vw;
+        height: 50vh;
     }
     #list-left{
         display: flex;
@@ -346,6 +346,15 @@ button:hover::before {
         justify-content: center;
         align-items: center;
         gap:10px;
+        height: 15%;
+    }
+    #list-song h4{
+        font-size: 15px;
+    }
+    #left-top{
+    position: relative;
+    left: 10px;
+    top: 15px;
     }
 }
 @media screen and (max-width: 406px){
